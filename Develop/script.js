@@ -3,10 +3,10 @@
 //characters that can be used for password. # of 8-128 characters with lc,upc,numbers,spc
 // var generateBtn = document.querySelector("#generate");
 let generateBtn = document.querySelector("#generate");
-const uc = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-const lc = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-const num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-const spc = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "="]
+const upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const numer = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const spch = ["!", "@", "#", "$", "%", "^", "&", "*", "-", "_", "+", "="]
 
 
 //function to make genpass a function with inputting value heading. 8-128
@@ -35,28 +35,28 @@ function generatePassword() {
   //push array to new array if true.
   //concat=joining arrays
   if (upc) {
-    passArray = passArray.concat(upc)
+    passArray = passArray.concat(upper)
   }
   if (lc) {
-    passArray = passArray.concat(lc)
+    passArray = passArray.concat(lower)
   }
   if (num) {
-    passArray = passArray.concat(num)
+    passArray = passArray.concat(numer)
   }
   if (spc) {
-    passArray = passArray.concat(spc)
+    passArray = passArray.concat(spch)
   }
-
+  console.log(passArray)
   for (let index = 0; index < length; index++) {
     pass.push(passArray[Math.floor(Math.random() * passArray.length)])
   }
-
+  console.log(pass)
   //join
   pass = pass.join("");
 
   //array for new pass
   passArray = [];
-  return (pass)
+  return pass
 }
 
 // Write password to the #password input
