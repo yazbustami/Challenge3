@@ -1,4 +1,6 @@
 // Assignment Code
+//characters that can be used for password. # of 8-128 characters with lc,upc,numbers,spc
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
